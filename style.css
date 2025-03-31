@@ -1,0 +1,345 @@
+/* Import Chinese font and icon library */
+@import url('https://fonts.cdnfonts.com/css/noto-sans-sc');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* Base Styles */
+body {
+    margin: 0;
+    background-color: #0f0f0f;
+    color: #f8e8d8;
+    font-family: 'Noto Sans SC', 'Poppins', sans-serif;
+    font-size: 16px;
+    background-image: 
+        url(img/chinese-texture.png),
+        repeating-linear-gradient(
+            to right, 
+            transparent 0 500px, 
+            rgba(139, 0, 0, 0.2) 500px 501px
+        );
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Header Styles */
+header {
+    padding: 1.5em 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(15, 15, 15, 0.8);
+    background-image: repeating-linear-gradient(
+        to right, 
+        transparent 0 500px, 
+        rgba(200, 0, 0, 0.1) 500px 501px
+    );
+    border-bottom: 1px solid rgba(200, 0, 0, 0.3);
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset !important;
+    padding-block: unset !important;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #d10000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chinese-char {
+    font-size: 1.5em;
+    color: #ff6600;
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+nav li {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav li:hover {
+    color: #ff6600;
+}
+
+/* Section Styles */
+.section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+
+/* Banner Styles */
+#banner .title {
+    color: #ff6600;
+    font-size: 6em;
+    font-family: 'Noto Sans SC', 'devil breeze', sans-serif;
+    font-weight: bold;
+    position: relative;
+    text-align: left; /* Align text to the left */
+    left: 0; /* Move it to the left */
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+    margin-bottom: 0.5em;
+}
+
+#banner .title::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0.15em;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    color: rgba(139, 0, 0, 0.3);
+    font-size: 1em;
+}
+
+#banner .subtitle {
+    font-size: 1.5em;
+    color: #f8e8d8;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Decorative Elements */
+.decorate {
+    position: absolute;
+    pointer-events: none;
+}
+
+.floating {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Content Sections */
+.section .number {
+    font-family: 'Noto Sans SC';
+    font-size: 10em;
+    font-weight: bold;
+    color: rgba(255, 102, 0, 0.1);
+    position: absolute;
+}
+
+.section .content-fit .title {
+    font-family: 'Noto Sans SC', 'devil breeze', sans-serif;
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #ff6600;
+    margin-bottom: 1em;
+}
+
+.des p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 2em;
+}
+
+/* Cultural Icons */
+.cultural-icons {
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+    flex-wrap: wrap;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-item i {
+    font-size: 2em;
+    color: #ff6600;
+}
+
+/* Festival Timeline */
+.festival-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.festival {
+    background: rgba(139, 0, 0, 0.1);
+    padding: 1em;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 120px;
+    transition: transform 0.3s;
+}
+
+.festival:hover {
+    transform: translateY(-5px);
+}
+
+.festival .date {
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.festival .name {
+    font-size: 0.9em;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+}
+
+#contact table {
+    width: min(800px, 90vw);
+    margin: 2em auto;
+    border-collapse: collapse;
+}
+
+#contact table td {
+    padding: 1em;
+    border-bottom: 1px dashed rgba(255, 102, 0, 0.5);
+}
+
+#contact table td:nth-child(1) {
+    text-align: left;
+    font-weight: 500;
+    color: #ff6600;
+}
+
+#contact table td:nth-child(2) {
+    text-align: right;
+    font-weight: 300;
+}
+
+#contact .sign {
+    font-family: 'Noto Sans SC';
+    font-size: 5em;
+    color: #ff6600;
+    margin: 0.5em 0;
+    position: relative;
+}
+
+#contact .meaning {
+    display: block;
+    font-size: 0.3em;
+    color: #f8e8d8;
+    margin-top: -1em;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.social-links i {
+    font-size: 1.5em;
+    color: #f8e8d8;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.social-links i:hover {
+    color: #ff6600;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1023px) {
+    #banner .title {
+        font-size: 4em;
+    }
+    
+    .section .number {
+        font-size: 8em;
+    }
+    
+    .section .content-fit .title {
+        font-size: 2.5em;
+    }
+    
+    .cultural-icons {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #banner .title {
+        font-size: 2.5em;
+    }
+    
+    #banner .subtitle {
+        font-size: 1.1em;
+    }
+    
+    .section .number {
+        font-size: 5em;
+    }
+    
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+    
+    .festival-timeline {
+        justify-content: center;
+    }
+    
+    #contact .sign {
+        font-size: 3em;
+    }
+    
+    nav ul {
+        gap: 1em;
+    }
+}
+
+/* 3D Container */
+#container3D {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+}
